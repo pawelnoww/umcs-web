@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        .super-guzik {
+            width: 5vw;
+            height: 5vw;
+            margin: 2px;
+            font-size: 20pt;
+        }
+
+        #text-boxik {
+            width: calc(20vw + 8px);
+            height: 5vw;
+            font-size: 20pt;
+            text-align: right;
+        }
+
+        #main {
+            margin-left: 40vw;
+            margin-top: 10vh;
+        }
+
+        body {
+            background: url("https://previews.123rf.com/images/pookgreen/pookgreen1501/pookgreen150100256/35714761-number-keypad-of-a-calculator-on-white-background.jpg") no-repeat fixed;
+            background-size: 100%;
+        }
+    </style>
+
+
+    <script>
+        let currentInput = '';
+        let history = [];
+
+        function gen() {
+            const main = document.getElementById("main");
+
+            const textBox = document.createElement("input");
+            textBox.type = "text";
+            textBox.id = "text-boxik";
+            main.append(textBox);
+
+            const firstRow = document.createElement("div");
+            let firstRowButtons = ["%", "CE", "C", "<-"];
+            for (let operator of firstRowButtons) {
+                const key = document.createElement("button");
+                if (operator === "C" || operator === "CE") {
+                    key.onclick = clearAll;
+                } else if (operator === "<-") {
+                    key.onclick = clearLastChar;
+                } else {
+                    key.onclick = show;
+                }
+                key.className = "super-guzik";
+                key.innerText = operator;
+                key.dataset.value = operator;
+                firstRow.append(key);
+            }
+            main.append(firstRow);
+
+
+            let rightSideOperators = ["/", "*", "-"]
+            for (let i = 0; i < 3; i++) {
+                const row = document.createElement("div");
+                main.appendChild(row);
+
+                for (let j = 0; j < 3; j++) {
+                    const key = document.createElement("button");
+                    key.innerText = i * 3 + j + 1;
+                    key.className = "super-guzik";
+                    key.onclick = show;
+                    key.dataset.value = i * 3 + j + 1;
+                    row.appendChild(key);
+                }
+
+                const key = document.createElement("button");
+                key.innerText = rightSideOperators[i];
+                key.className = "super-guzik";
+                key.onclick = show;
+                key.dataset.value = rightSideOperators[i];
+                row.appendChild(key);
+            }
+
+            let lastRowOperators = [".", "0", "=", "+"];
+            const lastRow = document.createElement("div");
+            for (let operator of lastRowOperators) {
+                const key = document.createElement("button");
+                if (operator === "=") {
+                    key.onclick = calculateResult;
+                } else {
+                    key.onclick = show;
+                }
+                key.className = "super-guzik";
+                key.innerText = operator;
+                key.dataset.value = operator;
+                lastRow.append(key);
+            }
+            main.append(lastRow);
+        }
+
+        function show() {
+            currentInput += this.dataset.value;
+            document.getElementById("text-boxik").setAttribute("value", currentInput);
+        }
+
+        function clearLastChar() {
+            currentInput = currentInput.slice(0, -1);
+            document.getElementById("text-boxik").setAttribute("value", currentInput);
+        }
+
+        function clearAll() {
+            currentInput = "";
+            document.getElementById("text-boxik").setAttribute("value", currentInput);
+        }
+
+        function calculateResult() {
+            history.push(currentInput);
+            const result = eval(currentInput).toString();
+            currentInput = result;
+            document.getElementById("text-boxik").setAttribute("value", currentInput);
+        }
+
+        function showHistory() {
+            alert(history.toString());
+        }
+
+
+    </script>
+</head>
+
+<body onload="gen()">
+<div id="main">
+</div>
+<button onclick="showHistory()" style="margin-left: 40vw">historia</button>
+</body>
+
+
+</html>
