@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CV</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        .timeline {
+            border-left: 2px solid #E6E9ED;
+            padding: 1rem 0;
+        }
+
+        .timeline-card {
+            position: relative;
+            margin-left: 31px;
+            border-left: 2px solid;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-card:last-child {
+            margin-bottom: 1rem;
+        }
+
+        .timeline-card:before {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            background-color: #fff;
+            border-radius: 10px;
+            width: 12px;
+            height: 12px;
+            top: 20px;
+            left: -41px;
+            border: 2px solid;
+            z-index: 2;
+        }
+
+        .timeline-card:after {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            background-color: currentColor;
+            width: 29px;
+            height: 2px;
+            top: 25px;
+            left: -29px;
+            z-index: 1;
+        }
+
+        .timeline-card-primary {
+            border-left-color: #4A89DC;
+        }
+
+        .timeline-card-primary:before {
+            border-color: #4A89DC;
+        }
+
+        .timeline-card-primary:after {
+            background-color: #4A89DC;
+        }
+
+        .timeline-card-success {
+            border-left-color: #37BC9B;
+        }
+
+        .timeline-card-success:before {
+            border-color: #37BC9B;
+        }
+
+        .timeline-card-success:after {
+            background-color: #37BC9B;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        .cover {
+            border-radius: 10px;
+        }
+
+        .cover-bg {
+            background-color: #4A89DC;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.12'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            border-radius: 10px 10px 0 0;
+        }
+
+        .avatar {
+            max-width: 216px;
+            max-height: 216px;
+            margin-top: 20px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+        footer a:not(.nav-link) {
+            color: inherit;
+            border-bottom: 1px dashed;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        @media (min-width: 48em) {
+            .avatar {
+                margin-bottom: -80px;
+                margin-left: 0;
+            }
+        }
+
+        @media print {
+            body {
+                background-color: #fff;
+            }
+
+            .container {
+                width: auto;
+                max-width: 100%;
+                padding: 0;
+            }
+
+            .cover, .cover-bg {
+                border-radius: 0;
+            }
+
+            .cover.shadow-lg {
+                box-shadow: none !important;
+            }
+
+            .cover-bg {
+                padding: 5rem !important;
+                padding-bottom: 10px !important;
+            }
+
+            .avatar {
+                margin-top: -10px;
+            }
+
+            .about-section {
+                padding: 6.5rem 5rem 2rem !important;
+            }
+
+            .skills-section,
+            .work-experience-section,
+            .education-section,
+            .contant-section {
+                padding: 1.5rem 5rem 2rem !important;
+            }
+
+            .page-break {
+                padding-top: 5rem;
+                page-break-before: always;
+            }
+        }
+
+    </style>
+
+</head>
+<body id="top">
+<div class="page-content">
+    <div class="container">
+        <div class="cover shadow-lg bg-white">
+            <div class="cover-bg p-3 p-lg-4 text-white">
+                <div class="row">
+                    <div class="col-lg-4 col-md-5">
+                        <div class="avatar hover-effect bg-white p-1"><img
+                                src="https://media.licdn.com/dms/image/C4D03AQGaZIYl7AMcWw/profile-displayphoto-shrink_800_800/0/1656368827459?e=1711584000&v=beta&t=gCge5jRuHnq9Y3MJUV4EDiN7mArchMHewYe6B3lmE3M"
+                                width="200" height="200" alt="Photo"/></div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-section pt-4 px-3 px-lg-4 mt-1">
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2 class="h3 mb-3">O mnie</h2>
+                        <p>Jestem bardzo sumienny w wykonywaniu swoich obowiązków i lubię
+                            nieszablonowe podejścia. Pasją do programowania zaraziłem się w okresie
+                            studiowania. Język Python okazał się dla mnie najlepszym narzędziem,
+                            gdyż dzięki niemu nie myślę, jak, tylko co chcę zrealizować. Chcę dalej się
+                            rozwijać i tworzyć rozwiązania oparte na mechanizmach AI.</p>
+                    </div>
+                    <div class="col-md-5 offset-md-1">
+                        <div class="row mt-2">
+                            <div class="col-sm-4">
+                                <div class="pb-1">Rok ur.</div>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="pb-1 text-secondary">1999</div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="pb-1">Email</div>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="pb-1 text-secondary">pawelnow12@gmail.com</div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="pb-1">Adres</div>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="pb-1 text-secondary">Lublin</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="d-print-none"/>
+            <div class="skills-section px-3 px-lg-4">
+                <h2 class="h3 mb-3">Umiejętności</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-2"><span>Python</span>
+                            <div class="progress my-1">
+                                <div class="progress-bar bg-primary" role="progressbar" data-aos="zoom-in-right"
+                                     data-aos-delay="100" data-aos-anchor=".skills-section" style="width: 90%"
+                                     aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="mb-2"><span>Analityczne myślenie</span>
+                            <div class="progress my-1">
+                                <div class="progress-bar bg-primary" role="progressbar" data-aos="zoom-in-right"
+                                     data-aos-delay="200" data-aos-anchor=".skills-section" style="width: 90%"
+                                     aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="mb-2"><span>Pandas / NumPy</span>
+                            <div class="progress my-1">
+                                <div class="progress-bar bg-primary" role="progressbar" data-aos="zoom-in-right"
+                                     data-aos-delay="300" data-aos-anchor=".skills-section" style="width: 80%"
+                                     aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-2"><span>TensorFlow / scikit-learn</span>
+                            <div class="progress my-1">
+                                <div class="progress-bar bg-success" role="progressbar" data-aos="zoom-in-right"
+                                     data-aos-delay="400" data-aos-anchor=".skills-section" style="width: 80%"
+                                     aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="mb-2"><span>Linux / bash</span>
+                            <div class="progress my-1">
+                                <div class="progress-bar bg-success" role="progressbar" data-aos="zoom-in-right"
+                                     data-aos-delay="500" data-aos-anchor=".skills-section" style="width: 75%"
+                                     aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="mb-2"><span>FastAPI / Flask</span>
+                            <div class="progress my-1">
+                                <div class="progress-bar bg-success" role="progressbar" data-aos="zoom-in-right"
+                                     data-aos-delay="600" data-aos-anchor=".skills-section" style="width: 75%"
+                                     aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="d-print-none"/>
+            <div class="work-experience-section px-3 px-lg-4">
+                <h2 class="h3 mb-4">Doświadczenie</h2>
+                <div class="timeline">
+                    <div class="timeline-card timeline-card-primary card shadow-sm">
+                        <div class="card-body">
+                            <div class="h5 mb-1">Nauczyciel podstaw programowania i algorytmiki <span
+                                    class="text-muted h6">w Techni Schools</span></div>
+                            <div class="text-muted text-small mb-2">09.2022 - obecnie</div>
+                            <div>Nauczanie podstaw programowania i algorytmiki w języku Python;
+                                prowadzenie warsztatów z Machine Learningu
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-card timeline-card-primary card shadow-sm">
+                        <div class="card-body">
+                            <div class="h5 mb-1">AI/ML developer <span
+                                    class="text-muted h6">w Timeqube / Meetra.ai</span>
+                            </div>
+                            <div class="text-muted text-small mb-2">10.2021 - obecnie</div>
+                            <div>Projekt B+R, którego celem jest zbudowanie rozwiązania automatyzującego
+                                proces oceny warunków i formułowania rekomendacji dotyczących
+                                przebiegu spotkania, w celu podniesienia jakości spotkania.
+                                Technologie: Python, TensorFlow, PyTorch, Flask, Transformers, Pandas,
+                                NumPy, Matplotlib, Docker, Bash, SQL, HTML, CSS
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-card timeline-card-primary card shadow-sm">
+                        <div class="card-body">
+                            <div class="h5 mb-1">AI/ML developer <span class="text-muted h6"> UMCS</span>
+                            </div>
+                            <div class="text-muted text-small mb-2">07.2020 - 08.2021</div>
+                            <div>1) Projekt B+R realizowany we współpracy z firmą Orange, którego celem
+                                było stworzenie narzędzia do prognozowania przepływności sieci internetowej
+                                w 1200 węzłach krajowych.
+                                Technologie: Python, TensorFlow, Scikit-learn, Pandas, NumPy, Matplotlib,
+                                HTML, CSS, Docker, Airflow <br>
+                                2) Projekt B+R, którego celem była analiza danych dot. energetyki wiatrowej
+                                oraz stworzenie narzędzia do jej prognozowania.
+                                Technologie: Python, TensorFlow, Scikit-learn, Pandas, NumPy, Matplotlib
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="d-print-none"/>
+            <div class="page-break"></div>
+            <div class="education-section px-3 px-lg-4 pb-4">
+                <h2 class="h3 mb-4">Edukacja</h2>
+                <div class="timeline">
+                    <div class="timeline-card timeline-card-success card shadow-sm">
+                        <div class="card-body">
+                            <div class="h5 mb-1">Informatyka, mgr <span class="text-muted h6">Uniwersytet Marii-Curie Skłodowskiej w Lublinie</span>
+                            </div>
+                            <div class="text-muted text-small mb-2">2022 - obecnie</div>
+                        </div>
+                    </div>
+                    <div class="timeline-card timeline-card-success card shadow-sm">
+                        <div class="card-body">
+                            <div class="h5 mb-1">Informatyka, licencjat <span class="text-muted h6">Uniwersytet Marii-Curie Skłodowskiej w Lublinie</span>
+                            </div>
+                            <div class="text-muted text-small mb-2">2019 - 2022</div>
+                        </div>
+                    </div>
+                    <div class="timeline-card timeline-card-success card shadow-sm">
+                        <div class="card-body">
+                            <div class="h5 mb-1">Technik informatyk <span
+                                    class="text-muted h6">Zespół Szkół nr 3 w Ostrowcu Świętokrzyskim</span></div>
+                            <div class="text-muted text-small mb-2">1995 - 2007</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="d-print-none"/>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
